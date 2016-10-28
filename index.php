@@ -36,11 +36,11 @@
     </div>
   </div>
   <div id="owl-example" class="owl-carousel">
-      <div> Your Content </div>
-      <div> Your Content </div>
-      <div> Your Content </div>
-      <div> Your Content </div>
-    </div>
-</nav>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+  </div>
+  </nav>
 </body>
 </html>
