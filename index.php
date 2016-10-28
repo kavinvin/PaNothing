@@ -5,6 +5,10 @@
   <script src="bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="css/custom.css"/>
+  <!-- Owl Carousel -->
+  <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+  <script src="assets/owl-carousel/owl.carousel.js"></script>
   <title>ป้าไม่ได้อะไรเลย</title>
 </head>
 <body>
@@ -31,6 +35,12 @@
       </ul>
     </div>
   </div>
+  <div id="owl-example" class="owl-carousel">
+      <div> Your Content </div>
+      <div> Your Content </div>
+      <div> Your Content </div>
+      <div> Your Content </div>
+    </div>
 </nav>
 </body>
 </html>
