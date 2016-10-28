@@ -6,12 +6,14 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="css/custom.css"/>
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
-  <link rel="stylesheet" href="owl-carousel/owl.theme.css">
-  <script src="assets/owl-carousel/owl.carousel.js"></script>
+  <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.theme.css">
+  <script src="owl.carousel/owl-carousel/owl.carousel.min.js"></script>
+  <script src="js\common.js"></script>
   <title>ป้าไม่ได้อะไรเลย</title>
 </head>
 <body>
+  <!-- nav -->
   <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -35,12 +37,16 @@
       </ul>
     </div>
   </div>
-  <div id="owl-example" class="owl-carousel">
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-    <div> Your Content </div>
-  </div>
   </nav>
+  <!-- nav end -->
+  <!-- header -->
+  <div class="hidden-xs col-sm-12">
+    <div id="header" class="owl-carousel owl-theme">
+      <div class="item"><img src="img/headerimg.png"></img></div>
+      <div class="item"><img src="img/headerimg.png"></img></div>
+      <div class="item"><img src="img/headerimg.png"></img></div>
+      <div class="item"><img src="img/headerimg.png"></img></div>
+  </div></div>
+  <!-- header end -->
 </body>
 </html>
