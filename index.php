@@ -45,8 +45,8 @@
   </div></div>
   <!-- header end -->
   <div class="col-xs-12">
-    <div class="col-xs-12 example"></div>
-    <div class="col-xs-12 example"></div>
+    <div class="col-xs-12 col-sm-6 example"></div>
+    <div class="col-xs-12 col-sm-6 example"></div>
   </div>
 </body>
 </html>
