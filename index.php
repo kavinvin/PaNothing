@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="bootstrap/js/bootstrap.js"></script>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
-  <link rel="stylesheet" href="css/custom.css"/>
-  <!-- Owl Carousel -->
-  <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.carousel.css">
-  <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.theme.css">
-  <script src="owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-  <script src="js\common.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> <script src="bootstrap/js/bootstrap.js"></script> <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/> <link rel="stylesheet" href="css/custom.css"/> <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.carousel.css"> <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.theme.css"> <script src="owl.carousel/owl-carousel/owl.carousel.min.js"></script> <script src="js\common.js"></script>
   <title>ป้าไม่ได้อะไรเลย</title>
 </head>
 <body>
