@@ -1,6 +1,21 @@
+<?php
+    session_start();
+    require("includes/connection.php");
+    if(isset($_GET['page'])){
+        $pages=array("products", "cart");
+        if(in_array($_GET['page'], $pages)) {
+            $_page=$_GET['page'];
+        }else{
+            $_page="products";
+        }
+    }else{
+        $_page="products";
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
@@ -47,6 +62,9 @@
   <div class="col-xs-12">
     <div class="col-xs-12 col-sm-6 example"></div>
     <div class="col-xs-12 col-sm-6 example"></div>
+  </div>
+  <div class="container">
+    <?php require($_page.".php"); ?>
   </div>
 </body>
 </html>
