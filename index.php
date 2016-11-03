@@ -1,17 +1,3 @@
-<?php
-    session_start();
-    require("includes/connection.php");
-    if(isset($_GET['page'])){
-        $pages=array("products", "cart");
-        if(in_array($_GET['page'], $pages)) {
-            $_page=$_GET['page'];
-        }else{
-            $_page="products";
-        }
-    }else{
-        $_page="products";
-    }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +50,6 @@
     <div class="col-xs-12 col-sm-6 example"></div>
   </div>
   <div class="container">
-    <?php require($_page.".php"); ?>
   </div>
 </body>
 </html>
