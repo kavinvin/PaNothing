@@ -1,8 +1,8 @@
 <?php
 
-   $server="localhost";
-   $user="root";
-   $pass="";
+   $server="rds-instance.c6i4jskh7apd.ap-southeast-1.rds.amazonaws.com";
+   $user="kavinvin";
+   $pass="itnothing";
    $db="pa-shop";
 
    // connect to mysql
