@@ -50,7 +50,6 @@
     <div class="col-xs-12 col-sm-6 example"></div>
   </div>
   <div class="container">
-    <?php require($_page.".php"); ?>
   </div>
 </body>
 </html>
