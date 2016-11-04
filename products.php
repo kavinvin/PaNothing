@@ -49,9 +49,9 @@
         <?php
 
             $sql="SELECT * FROM products ORDER BY name ASC";
-            $query=mysqli_query($conn ,$sql);
+            $query=mysql_query($sql);
 
-            while ($row=mysqli_fetch_array($query)) {
+            while ($row=mysql_fetch_array($query)) {
 
         ?>
             <div class="col-xs-12 panel panel-body">
