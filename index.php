@@ -1,15 +1,15 @@
 <?php
     session_start();
-    require("includes/connection.php");
+    require("database/connection.php");
     if(isset($_GET['page'])){
         $pages=array("products", "cart");
         if(in_array($_GET['page'], $pages)) {
             $_page=$_GET['page'];
         }else{
-            $_page="products";
+            $_page="database/products";
         }
     }else{
-        $_page="products";
+        $_page="database/products";
     }
 ?>
 
