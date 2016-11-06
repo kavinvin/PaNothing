@@ -43,11 +43,13 @@
       <a class="navbar-brand" href="#">PaNothing</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav center login-panel">
-        <li><input type="text" placeholder="username"></li>
-        <li><input type="password" placeholder="password"></li>
-        <li><a href="#">Login</a></li>
-      </ul>
+      <form method="post">
+        <ul class="nav navbar-nav center login-panel">
+          <li>Username<input name="user" type="text"></li>
+          <li>Password<input name="pass" type="password"></li>
+          <li><a href="#"><button>Login</button></a></li>
+        </ul>
+      </form>
     </div>
   </div>
   </nav>

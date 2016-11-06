@@ -6,10 +6,5 @@ $(document).ready(function() {
     singleItem : true,
     autoPlay : true,
   });
-  if ($(window).width() < 960) {
   
-  }
-  else {
-  
-  }
 });
