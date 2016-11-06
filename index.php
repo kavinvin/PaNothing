@@ -12,6 +12,7 @@
         $_page="products";
     }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +30,8 @@
 </head>
 <body>
   <!-- nav -->
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+  <nav class="navbar navbar-default">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -50,20 +51,22 @@
   </nav>
   <!-- nav end -->
   <!-- header -->
-  <div class="hidden-xs col-sm-12">
-    <div id="header" class="owl-carousel owl-theme">
-      <div class="item"><img src="img/headerimg.png"></img></div>
-      <div class="item"><img src="img/headerimg.png"></img></div>
-      <div class="item"><img src="img/headerimg.png"></img></div>
-      <div class="item"><img src="img/headerimg.png"></img></div>
-  </div></div>
-  <!-- header end -->
-  <div class="col-xs-12">
-    <div class="col-xs-12 col-sm-6 example"></div>
-    <div class="col-xs-12 col-sm-6 example"></div>
-  </div>
-  <div class="container">
-    <?php require($_page.".php"); ?>
-  </div>
+    <div class="container">
+    <div class="hidden-xs col-sm-12">
+      <div id="header" class="owl-carousel owl-theme">
+        <div class="item"><img src="img/headerimg.png"></img></div>
+        <div class="item"><img src="img/headerimg.png"></img></div>
+        <div class="item"><img src="img/headerimg.png"></img></div>
+        <div class="item"><img src="img/headerimg.png"></img></div>
+    </div></div>
+    <!-- header end -->
+    <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-6 example"></div>
+      <div class="col-xs-12 col-sm-6 example"></div>
+    </div>
+    <div class="container">
+      <?php require($_page.".php"); ?>
+    </div>
+    </div>
 </body>
 </html>
