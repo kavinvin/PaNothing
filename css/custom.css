@@ -1,15 +1,44 @@
-#header .item img{
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar-brand {
+  font-family: century gothic;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.login-panel {
+  float: right;
+}
+
+.login-panel input {
+  padding-left: 5px;
+  margin-left: 15px;
+}
+
+#header .item img {
   display: block;
   width: 100%;
   height: auto;
 }
+
+.center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
 .fullscreen {
-    height: 100%;
-    position: relative;
-    z-index: 2;
-    background: rgba(0, 0, 0, 0.70);
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.70);
 }
+
 .example {
-    background-color: black;
-    height: 200px;
+  background-color: black;
+  height: 200px;
 }
+
+
