@@ -38,17 +38,17 @@
             echo "<h2>$message</h2>";
         }
     ?>
-        <div class="panel col-xs-12 panel-primary">
+        <div id="goods" class="panel col-xs-12 panel-primary">
             <div class="col-xs-12 panel-heading">
                 <div class="col-xs-4">ชื่อสินค้า</div>
-                <div class="col-xs-3">ข้อมูลสินค้า</div>
+                <div class="col-xs-4">ข้อมูลสินค้า</div>
                 <div class="col-xs-3">ราคา</div>
-                <div class="col-xs-2">ใส่ตระกร้า</div>
+                <div class="col-xs-1">ใส่ตระกร้า</div>
             </div>
 
         <?php
 
-            $sql="SELECT * FROM products ORDER BY name ASC";
+            $sql="SELECT * FROM products ORDER BY id_product ASC";
             $query=mysql_query($sql);
 
             while ($row=mysql_fetch_array($query)) {
@@ -57,7 +57,7 @@
             <div class="col-xs-12 panel-body product-list">
                 <div class="col-xs-4 product-name"><?php echo $row['name'] ?></div>
                 <div class="col-xs-4 product-description"><?php echo $row['description'] ?></div>
-                <div class="col-xs-3"><?php echo (float)$row['price'] ?> บาท</div>
+                <div class="col-xs-3 product-price"><?php echo (float)$row['price'] ?> บาท</div>
                 <div class="col-xs-1 quantity-picker">
                   <img class="arrow arrowup" src="img/icon/arrow-up.png" /><br>
                   <input type="text" maxlength="2" value=0 onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="quantity-filler" name="product-id<?php echo $row['id_product'] ?>"><br>

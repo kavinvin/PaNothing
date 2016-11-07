@@ -1,0 +1,46 @@
+.product-list {
+  height: 80px;
+  border-radius: 5px;
+  margin: 17px 0 0 0;
+  padding: 5px;
+  box-shadow: 0px 0px 8px 2px #CCCCCC;                 
+  -moz-box-shadow: 0px 0px 8px 2px #CCCCCC;            
+  -webkit-box-shadow: 0px 0px 8px 2px #CCCCCC;
+  position: relative;
+}
+
+.product-list div {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-name {
+  font-size: 1.7em;
+  padding-left: 20px;
+}
+
+.product-description {
+}
+
+.product-price {
+  font-size: 1.2em;
+}
+
+.quantity-picker {
+  text-align: center;
+}
+
+.quantity-picker input {
+  width: 30px;
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
+.quantity-filler {
+  text-align: center;
+}
+
+.arrow {
+  width: 15px;
+  cursor: pointer;
+}

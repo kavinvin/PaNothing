@@ -50,40 +50,24 @@ input[name=pass] {
   height: 200px;
 }
 
-.arrow {
-  width: 15px;
-}
-
-.product-list {
-  border: 3px solid gray;
-  border-radius: 5px;
-  margin: 10px 0 0 0;
-  padding: 5px;
-}
-
-.quantity-picker {
-  text-align: center;
-}
-
-.quantity-picker input {
-  width: 30px;
-  border: 2px solid gray;
-  border-radius: 3px;
-}
-
-.quantity-filler {
-  text-align: center;
-}
-
-.product-name {
-  font-size: 1.7em;
-}
-
-.product-description {
-  padding: 10px;
-}
-
 .panel-primary {
     border: none;
 }
 
+#detail h3 {
+    color: white;
+}
+
+#omelet {
+    background: url(../img/omelet.jpg) center center;
+    background-size: cover;
+    position: relative;
+}
+
+#omelet button {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.66);
+    border: none;
+    font-size: 150%;
+}

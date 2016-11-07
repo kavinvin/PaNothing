@@ -8,7 +8,11 @@ $(document).ready(function() {
   });
   $('.arrowup').click(function() {
     $(this).siblings('input').val(function(i, oldval) {
-      return ++oldval;
+        if (oldval >= 99) {
+            return oldval;
+        } else {
+            return ++oldval;
+        }
     });
   });
   $('.arrowdown').click(function() {
