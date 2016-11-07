@@ -22,7 +22,9 @@
   <script src="bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+  <!--  css link-->
   <link rel="stylesheet" href="css/custom.css"/>
+  <link rel="stylesheet" href="css/product.css"/>
   <!-- Owl Carousel -->
   <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.carousel.css">
   <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.theme.css">

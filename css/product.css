@@ -1,0 +1,32 @@
+.product-list {
+  border: 3px solid gray;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  padding: 5px;
+}
+
+.product-name {
+  font-size: 1.7em;
+}
+
+.product-description {
+  padding: 10px;
+}
+
+.quantity-picker {
+  text-align: center;
+}
+
+.quantity-picker input {
+  width: 30px;
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
+.quantity-filler {
+  text-align: center;
+}
+
+.arrow {
+  width: 15px;
+}
