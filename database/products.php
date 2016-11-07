@@ -41,9 +41,9 @@
         <div id="goods" class="panel col-xs-12 panel-primary">
             <div class="col-xs-12 panel-heading">
                 <div class="col-xs-4">ชื่อสินค้า</div>
-                <div class="col-xs-3">ข้อมูลสินค้า</div>
+                <div class="col-xs-4">ข้อมูลสินค้า</div>
                 <div class="col-xs-3">ราคา</div>
-                <div class="col-xs-2">ใส่ตระกร้า</div>
+                <div class="col-xs-1">ใส่ตระกร้า</div>
             </div>
 
         <?php

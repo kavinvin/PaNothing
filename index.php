@@ -72,16 +72,6 @@
     </div>
       <?php require($_page.".php"); ?>
     </div>
-    
-    <div class="outer">
-      <div class="middle">
-        <div class="inner">
-          <h1>The Content</h1>
-          <p>Once upon a midnight dreary...</p>
-        </div>
-      </div>
-    </div>
-    
-    
+
 </body>
 </html>
