@@ -54,10 +54,11 @@
             <div class="col-xs-12 panel-body product-list">
               <div class="col-xs-5 product-pic">
                 <div class="cropper">
+                  <div class="checkhover"></div>
                   <img class="sidepic" src="img/sidepic/<?php echo $item_id ?>.jpg" />
                 </div>
+                <div class="product-name"><?php echo $row['name'] ?></div>
               </div>
-              <div class="product-name"><?php echo $row['name'] ?></div>
               <div class="col-xs-3 product-description"><?php echo $row['description'] ?></div>
               <div class="col-xs-2 product-price"><?php echo (float)$row['price'] ?> บาท</div>
               <div class="col-xs-2 quantity-picker">
