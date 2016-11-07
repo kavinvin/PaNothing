@@ -6,22 +6,27 @@ $(document).ready(function() {
     singleItem : true,
     autoPlay : true,
   });
+
   $('.arrowup').click(function() {
     $(this).siblings('input').val(function(i, oldval) {
-        if (oldval >= 99) {
-            return oldval;
-        } else {
-            return ++oldval;
-        }
+      if (oldval >= 99) {
+        return oldval;
+      }
+      return ++oldval;
     });
   });
+
   $('.arrowdown').click(function() {
     $(this).siblings('input').val(function(i, oldval) {
       if (oldval == 0) {
         return oldval
-      } else {
-        return --oldval;
       }
+      return --oldval;
     });
   });
+
+  $('.sidepic').hover(function() {
+    this.parent();
+  });
+
 });
