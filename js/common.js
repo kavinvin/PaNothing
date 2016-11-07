@@ -1,4 +1,4 @@
-$(function(){
+$(document).ready(function() {
   $('#header').owlCarousel({
     navigation : false,
     slideSpeed : 300,
@@ -6,4 +6,5 @@ $(function(){
     singleItem : true,
     autoPlay : true,
   });
+  
 });

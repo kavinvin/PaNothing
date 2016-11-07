@@ -1,25 +1,27 @@
 <?php
     session_start();
-    require("includes/connection.php");
+    require("database/connection.php");
     if(isset($_GET['page'])){
-        $pages=array("products", "cart");
+        $pages=array("database/products", "cart");
         if(in_array($_GET['page'], $pages)) {
             $_page=$_GET['page'];
         }else{
-            $_page="products";
+            $_page="database/products";
         }
     }else{
-        $_page="products";
+        $_page="database/products";
     }
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css"/>
   <!-- Owl Carousel -->
   <link rel="stylesheet" href="owl.carousel/owl-carousel/owl.carousel.css">
@@ -41,11 +43,13 @@
       <a class="navbar-brand" href="#">PaNothing</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav center login-panel">
-        <li><input type="text" placeholder="username"></li>
-        <li><input type="password" placeholder="password"></li>
-        <li><a href="#">Login</a></li>
-      </ul>
+      <form method="post">
+        <ul class="nav navbar-nav center login-panel">
+          <li>Username<input name="user" type="text"></li>
+          <li>Password<input name="pass" type="password"></li>
+          <li><a href="#"><button>Login</button></a></li>
+        </ul>
+      </form>
     </div>
   </div>
   </nav>
