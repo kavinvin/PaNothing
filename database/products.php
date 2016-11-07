@@ -38,13 +38,13 @@
             echo "<h2>$message</h2>";
         }
     ?>
-    <div class='container'>
-        <div class="col-xs-12 panel panel-default">
-            <div class="col-xs-4">ชื่อสินค้า</div>
-            <div class="col-xs-3">ข้อมูลสินค้า</div>
-            <div class="col-xs-3">ราคา</div>
-            <div class="col-xs-2">ใส่ตระกร้า</div>
-        </div>
+        <div class="panel panel-primary">
+            <div class="col-xs-12 panel-heading">
+                <div class="col-xs-4">ชื่อสินค้า</div>
+                <div class="col-xs-3">ข้อมูลสินค้า</div>
+                <div class="col-xs-3">ราคา</div>
+                <div class="col-xs-2">ใส่ตระกร้า</div>
+            </div>
 
         <?php
 
@@ -54,7 +54,7 @@
             while ($row=mysql_fetch_array($query)) {
 
         ?>
-            <div class="col-xs-12 panel panel-body">
+            <div class="col-xs-12 panel-body">
                 <div class="col-xs-4"><?php echo $row['name'] ?></div>
                 <div class="col-xs-3"><?php echo $row['description'] ?></div>
                 <div class="col-xs-3"><?php echo $row['price'] ?>$</div>
@@ -66,9 +66,6 @@
                 </div>
             </div>
         <?php
-
             }
-
         ?>
-
-    </div>
+            </div>

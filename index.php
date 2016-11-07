@@ -68,9 +68,7 @@
       <div class="col-xs-12 col-sm-6 example"></div>
       <div class="col-xs-12 col-sm-6 example"></div>
     </div>
-    <div class="container">
       <?php require($_page.".php"); ?>
-    </div>
     </div>
 </body>
 </html>
