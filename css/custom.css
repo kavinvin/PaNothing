@@ -83,6 +83,7 @@ input[name=pass] {
   padding: 10px;
 }
 
-
-
+.panel-primary {
+    border: none;
+}
 
