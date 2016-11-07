@@ -59,6 +59,11 @@
                 <div class="col-xs-3"><?php echo $row['description'] ?></div>
                 <div class="col-xs-3"><?php echo $row['price'] ?>$</div>
                 <div class="col-xs-2"><a href="index.php?page=products&action=add&id=<?php echo $row['id_product'] ?>">Add to cart</a></div>
+                <div id="quantity-picker">
+                  <img class="arrow" src="img/icon/arrow-up.png" />
+                  <input type="text" name="quantity">
+                  <img class="arrow" src="img/icon/arrow-down.png" />
+                </div>
             </div>
         <?php
 

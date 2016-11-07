@@ -50,4 +50,8 @@ input[name=pass] {
   height: 200px;
 }
 
+.arrow {
+  width: 15px;
+}
+
 
