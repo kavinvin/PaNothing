@@ -54,14 +54,13 @@
             while ($row=mysql_fetch_array($query)) {
 
         ?>
-            <div class="col-xs-12 panel-body">
-                <div class="col-xs-4"><?php echo $row['name'] ?></div>
+            <div class="col-xs-12 panel-body product-list">
+                <div class="col-xs-4 product-name"><?php echo $row['name'] ?></div>
                 <div class="col-xs-3"><?php echo $row['description'] ?></div>
-                <div class="col-xs-3"><?php echo $row['price'] ?>$</div>
-                <div class="col-xs-2"><a href="index.php?page=products&action=add&id=<?php echo $row['id_product'] ?>">Add to cart</a></div>
-                <div id="quantity-picker">
-                  <img class="arrow" src="img/icon/arrow-up.png" />
-                  <input type="text" name="quantity">
+                <div class="col-xs-3"><?php echo (float)$row['price'] ?> บาท</div>
+                <div class="col-xs-1 quantity-picker">
+                  <img class="arrow" src="img/icon/arrow-up.png" /><br>
+                  <input type="text" class="quantity" name="id<?php echo $row['id_product'] ?>"><br>
                   <img class="arrow" src="img/icon/arrow-down.png" />
                 </div>
             </div>
