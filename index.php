@@ -67,8 +67,30 @@
     </div></div>
     <!-- header end -->
     <div class="col-xs-12">
-      <div class="col-xs-12 col-sm-6 example"></div>
-      <div class="col-xs-12 col-sm-6 example"></div>
+      <div id="detail" class="col-xs-12 col-sm-6 example center"><h3>ทำไมต้อง"ป้าไม่ได้อะไรเลย"?</h3></div>
+      <div id="omelet" class="col-xs-12 col-sm-6 example">
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-info center col-xs-12">สั่งไข่เจียวเดี๋ยวนี้!</button>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">สั่งไข่เจียว</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">สั่ง!</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     </div>
       <?php require($_page.".php"); ?>
     </div>

@@ -48,7 +48,7 @@
 
         <?php
 
-            $sql="SELECT * FROM products ORDER BY name ASC";
+            $sql="SELECT * FROM products ORDER BY id_product ASC";
             $query=mysql_query($sql);
 
             while ($row=mysql_fetch_array($query)) {

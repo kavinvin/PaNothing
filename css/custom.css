@@ -53,3 +53,21 @@ input[name=pass] {
 .panel-primary {
     border: none;
 }
+
+#detail h3 {
+    color: white;
+}
+
+#omelet {
+    background: url(../img/omelet.jpg) center center;
+    background-size: cover;
+    position: relative;
+}
+
+#omelet button {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.66);
+    border: none;
+    font-size: 150%;
+}
