@@ -26,7 +26,7 @@ $(document).ready(function() {
   });
 
   $('.checkhover').hover(function() {
-    $(this).siblings(".sidepic").stop().fadeTo('1000', 0.5);
+    $(this).siblings(".sidepic").stop().fadeTo('1000', 0.4);
     $(this).siblings(".sidepic").animate({left: '0px'}, {queue: false})
     $(this).siblings(".sidepic").animate({top: '-20px'}, {queue: false});
     $(this).siblings(".sidepic").animate({height: '200%'}, {queue: false});
