@@ -57,7 +57,7 @@
             <div class="col-xs-12 panel-body product-list">
                 <div class="col-xs-4 product-name"><?php echo $row['name'] ?></div>
                 <div class="col-xs-4 product-description"><?php echo $row['description'] ?></div>
-                <div class="col-xs-3"><?php echo (float)$row['price'] ?> บาท</div>
+                <div class="col-xs-3 product-price"><?php echo (float)$row['price'] ?> บาท</div>
                 <div class="col-xs-1 quantity-picker">
                   <img class="arrow arrowup" src="img/icon/arrow-up.png" /><br>
                   <input type="text" maxlength="2" value=0 onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="quantity-filler" name="product-id<?php echo $row['id_product'] ?>"><br>
