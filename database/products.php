@@ -38,7 +38,7 @@
             echo "<h2>$message</h2>";
         }
     ?>
-        <div class="panel panel-primary">
+        <div class="panel col-xs-12 panel-primary">
             <div class="col-xs-12 panel-heading">
                 <div class="col-xs-4">ชื่อสินค้า</div>
                 <div class="col-xs-3">ข้อมูลสินค้า</div>

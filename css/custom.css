@@ -75,5 +75,7 @@ input[name=pass] {
   font-size: 1.7em;
 }
 
-
+.panel-primary {
+    border: none;
+}
 
