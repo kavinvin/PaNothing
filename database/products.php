@@ -37,19 +37,18 @@ if(isset($_GET['action']) && $_GET['action']=="add") {
         ?>
             <div class="col-xs-12 panel-body product-list">
               <div class="col-xs-5 product-pic">
-                <div class="checkhover"></div>
+                <div class="checkhover vertical-center"></div>
                 <div class="cropper">
                   <img class="sidepic" src="img/sidepic/<?php echo $item_id ?>.jpg" />
                 </div>
-                <div class="product-name"><?php echo $row['name'] ?></div>
-                <div class="product-name-hover"><?php echo $row['name'] ?></div>
+                <div class="product-name vertical-center"><?php echo $row['name'] ?></div>
               </div>
-              <div class="col-xs-3 product-description"><?php echo $row['description'] ?></div>
-              <div class="col-xs-2 product-price"><?php echo (float)$row['price'] ?> บาท</div>
-              <div class="col-xs-2 quantity-picker">
-                <img class="arrow arrowup" src="img/icon/arrow-up.png" /><br>
-                <input type="text" maxlength="2" value=0 onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="quantity-filler" name="<?php echo $item_id ?>"><br>
-                <img class="arrow arrowdown" src="img/icon/arrow-down.png" />
+              <div class="col-xs-3 product-description vertical-center"><?php echo $row['description'] ?></div>
+              <div class="col-xs-2 product-price vertical-center"><?php echo (float)$row['price'] ?> บาท</div>
+              <div class="col-xs-2 quantity-picker vertical-center">
+                <div class="arrow arrowup noselect"><img src="img/icon/arrow-up.png" /></div>
+                <input type="text" maxlength="2" value=0 onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="quantity-filler" name="<?php echo $item_id ?>">
+                <div class="arrow arrowup noselect"><img src="img/icon/arrow-down.png" /></div>
               </div>
             </div>
         <?php
