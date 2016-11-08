@@ -53,8 +53,8 @@
         ?>
             <div class="col-xs-12 panel-body product-list">
               <div class="col-xs-5 product-pic">
+                <div class="checkhover"></div>
                 <div class="cropper">
-                  <div class="checkhover"></div>
                   <img class="sidepic" src="img/sidepic/<?php echo $item_id ?>.jpg" />
                 </div>
                 <div class="product-name"><?php echo $row['name'] ?></div>

@@ -36,6 +36,8 @@
   box-shadow: 0px 0px 8px 2px #CCCCCC;                 
   -moz-box-shadow: 0px 0px 8px 2px #CCCCCC;            
   -webkit-box-shadow: 0px 0px 8px 2px #CCCCCC;
+  transition: 0.7s;
+  transition-delay: 0.1s;
 }
 
 .checkhover {
@@ -46,9 +48,31 @@
 }
 
 .sidepic {
-  height: 80px;
-  position: absolute;
+  height: 100%;
+  top: 0;
   left: -60px;
+  opacity: 1;
+  transition: 0.7s;
+  position: absolute;
+  transition-delay: 0.1s;
+}
+
+.checkhover:hover ~ .cropper .sidepic {
+  height: 200%;
+  top: -20px;
+  left: 0;
+  opacity: 0.5;
+  transition: 0.4s;
+}
+
+.checkhover:hover ~ .cropper {
+  width: 260px;
+  transition: 0.4s;
+}
+
+.checkhover:hover ~ .product-name {
+  color: white;
+  transition: color 0.4s;
 }
 
 .product-name {
@@ -56,10 +80,9 @@
   padding: 0px;
   position: absolute;
   left: 70px;
-  -webkit-transition: color 0.4s ease;
-  -moz-transition: color 0.4s ease;
-  -o-transition: color 0.4s ease;
-  transition: color 0.4s ease;
+  color: black;
+  transition: color 0.7s;
+  transition-delay: 0.1s;
 }
 
 .product-description {
