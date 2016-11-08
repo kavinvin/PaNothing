@@ -26,16 +26,16 @@ $(document).ready(function() {
   });
   
   $('.checkhover').hover(function() {
-    $(this).siblings(".cropper").children("img").stop().fadeTo('1000', 0.4);
-    $(this).siblings(".cropper").children("img").velocity({left: '0px'}, {queue: false});
-    $(this).siblings(".cropper").velocity({width: '250px'}, {queue: false});
-    $(this).siblings(".product-name").css('color', 'white');
+    $(this).siblings(".sidepic").stop().fadeTo('1000', 0.4);
+    $(this).siblings(".sidepic").velocity({left: '0px'}, {queue: false});
+    $(this).parent().velocity({width: '250px'}, {queue: false});
+    $(this).parent().siblings(".product-name").css('color', 'white');
   },
   function() {
-    $(this).siblings(".cropper").children("img").stop().fadeTo('1000', 1);
-    $(this).siblings(".cropper").children("img").velocity({left: '-80px'}, {queue: false});
-    $(this).siblings(".cropper").velocity({width: '70px'}, {queue: false});
-    $(this).siblings(".product-name").css('color', 'black');
+    $(this).siblings(".sidepic").stop().fadeTo('1000', 1);
+    $(this).siblings(".sidepic").velocity({left: '-80px'}, {queue: false});
+    $(this).parent().velocity({width: '70px'}, {queue: false});
+    $(this).parent().siblings(".product-name").css('color', 'black');
   }); 
   
 });
