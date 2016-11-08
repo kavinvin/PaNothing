@@ -13,6 +13,12 @@
   cursor: default;
 }
 
+.product-list:hover {
+  background-color: hsl(208, 56%, 46%);
+  color: white;
+  transition: 0.4s;
+}
+
 .product-list div {
   top: 50%;
   transform: translateY(-50%);
@@ -32,7 +38,6 @@
   overflow: hidden;
   position: relative;
   background-color: hsla(0, 0%, 0%, 1);
-  box-shadow: 0px 0px 8px 2px #CCCCCC;
   transition: 0.7s;
   transition-delay: 0.1s;
 }
@@ -122,6 +127,7 @@ left
 }
 
 .quantity-filler {
+  color: black;
   text-align: center;
   margin: auto;
 }

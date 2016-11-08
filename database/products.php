@@ -41,8 +41,8 @@ if(isset($_GET['action']) && $_GET['action']=="add") {
                 <div class="cropper">
                   <img class="sidepic" src="img/sidepic/<?php echo $item_id ?>.jpg" />
                 </div>
-              <div class="product-name"><?php echo $row['name'] ?></div>
-              <div class="product-name-hover"><?php echo $row['name'] ?></div>
+                <div class="product-name"><?php echo $row['name'] ?></div>
+                <div class="product-name-hover"><?php echo $row['name'] ?></div>
               </div>
               <div class="col-xs-3 product-description"><?php echo $row['description'] ?></div>
               <div class="col-xs-2 product-price"><?php echo (float)$row['price'] ?> บาท</div>
