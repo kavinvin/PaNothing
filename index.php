@@ -61,10 +61,8 @@
     <div class="container">
     <div class="hidden-xs col-sm-12">
       <div id="header" class="owl-carousel owl-theme">
-        <div class="item"><img src="img/headerimg.png"></img></div>
-        <div class="item"><img src="img/headerimg.png"></img></div>
-        <div class="item"><img src="img/headerimg.png"></img></div>
-        <div class="item"><img src="img/headerimg.png"></img></div>
+        <div class="item"><img src="img/headerimg2.jpg"></img></div>
+        <div class="item"><img src="img/headerimg3.jpg"></img></div>
     </div></div>
     <!-- header end -->
     <div class="col-xs-12">
