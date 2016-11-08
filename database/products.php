@@ -1,37 +1,23 @@
 <?php
-
-    if(isset($_GET['action']) && $_GET['action']=="add"){
-
-        $id=intval($_GET['id']);
-
-        if(isset($_SESSION['cart'][$id])){
-
-            $_SESSION['cart'][$id]['quantity']++;
-
-        }else{
-
-            $sql_s="SELECT * FROM products
-                WHERE id_product={$id}";
-            $query_s=mysql_query($sql_s);
-            if(mysql_num_rows($query_s)!=0){
-                $row_s=mysql_fetch_array($query_s);
-
-                $_SESSION['cart'][$row_s['id_product']]=array(
-                        "quantity" => 1,
-                        "price" => $row_s['price']
-                    );
-
-
-            }else{
-
-                $message="This product id it's invalid!";
-
-            }
-
+if(isset($_GET['action']) && $_GET['action']=="add") {
+    $id=intval($_GET['id']);
+    if(isset($_SESSION['cart'][$id])) {
+        $_SESSION['cart'][$id]['quantity']++;
+    } else {
+        $sql_s="SELECT * FROM products
+            WHERE id_product={$id}";
+        $query_s=mysql_query($sql_s);
+        if(mysql_num_rows($query_s)!=0){
+            $row_s=mysql_fetch_array($query_s);
+            $_SESSION['cart'][$row_s['id_product']]=array(
+                "quantity" => 1,
+                "price" => $row_s['price']
+            );
+        } else {
+            $message="This product id it's invalid!";
         }
-
     }
-
+}
 ?>
     <?php
         if(isset($message)){
@@ -42,9 +28,7 @@
             <div class="col-xs-12 panel-heading product-header">
                 รายการสินค้า
             </div>
-
         <?php
-
             $sql="SELECT * FROM products ORDER BY id_product ASC";
             $query=mysql_query($sql);
 
@@ -58,6 +42,7 @@
                   <img class="sidepic" src="img/sidepic/<?php echo $item_id ?>.jpg" />
                 </div>
               <div class="product-name"><?php echo $row['name'] ?></div>
+              <div class="product-name-hover"><?php echo $row['name'] ?></div>
               </div>
               <div class="col-xs-3 product-description"><?php echo $row['description'] ?></div>
               <div class="col-xs-2 product-price"><?php echo (float)$row['price'] ?> บาท</div>
