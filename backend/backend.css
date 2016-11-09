@@ -1,0 +1,14 @@
+.fullscreen {
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.middle-thing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.center-thing {
+  text-align: center;
+}
