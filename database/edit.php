@@ -11,6 +11,7 @@ function formOutput($id, $name, $description, $price, $error) {
         <script src="../bootstrap/js/bootstrap.js"></script>
         <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
         <link rel="stylesheet" href="../css/custom.css"/>
+        <link rel="stylesheet" href="../backend/backend.css"/>
         <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     </head>
 
@@ -32,7 +33,7 @@ function formOutput($id, $name, $description, $price, $error) {
         <strong>คำอธิบาย: *</strong> <input class="form-control" type="text" name="description" value="<?php echo $description; ?>"/><br/>
         <strong>ราคา: *</strong> <input class="form-control" type="text" name="price" value="<?php echo $price; ?>"/><br/>
         <p>* ต้องกรอกข้อมูล</p>
-        <input type="submit" name="submit" value="Submit">
+        <input class="btn btn-default" type="submit" name="submit" value="Submit">
     </div>
 </form>
 

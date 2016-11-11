@@ -72,12 +72,6 @@ input[name=pass] {
     font-size: 150%;
 }
 
-.middle-thing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.center-thing {
-  text-align: center;
+.user {
+    padding: 8px;
 }
