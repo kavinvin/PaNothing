@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require("../database/connection.php");
+    $_page="../database/products";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +17,34 @@
   <link href="backend.css" rel='stylesheet'>
 </head>
 <body>
-    <div class='col-xs-12 fullscreen'><div class="middle-thing center-thing"><h1>PaNothing</h1><br><h4>Management System</h4></div></div>
+    <div class="container">
+        <?php
+            $result = mysql_query("SELECT * FROM products") or die(mysql_error());
+            while($row = mysql_fetch_array( $result )) {
+        ?>
+        <div class="col-xs-12 center-thing">
+            <div class="col-xs-3">
+                <?php echo $row['name']; ?>
+            </div>
+            <div class="col-xs-3">
+                <?php echo $row['description']; ?>
+            </div>
+            <div class="col-xs-3">
+                <?php echo $row['price']; ?>
+            </div>
+            <div class="col-xs-3">
+                <div class="row">
+                    <a href="delete.php?id=<?php echo $row['name']; ?>">ลบ</a>
+                </div>
+                <div class="row">
+                    <a href="edit.php?id=<?php echo $row['name']; ?>">แก้ไข</a>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+        <div class="row center-thing">
+            <a href="new.php">เพิ่มสินค้า</a>
+        </div>  
+    </div>
 </body>
 </html>
