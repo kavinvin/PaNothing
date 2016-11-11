@@ -26,7 +26,7 @@
         ?>
         <div class="col-xs-12 center-thing panel-body product-list">
             <div class="col-xs-12 col-sm-2 center-y">
-                <?php echo $row['id_product']; ?>
+                <?php echo $row['product_id']; ?>
             </div>
             <div class="col-xs-12 col-sm-2 center-y">
                 <?php echo $row['name']; ?>
@@ -39,17 +39,17 @@
             </div>
             <div class="col-xs-12 col-sm-3 center-y">
                 <div class="col-xs-12 col-sm-6">
-                    <a class="btn btn-default" href="../database/delete.php?id=<?php echo $row['id_product']; ?>">ลบ</a>
+                    <a class="btn btn-default" href="../database/delete.php?id=<?php echo $row['product_id']; ?>">ลบ</a>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <a class="btn btn-default" href="../database/edit.php?id=<?php echo $row['id_product']; ?>">แก้ไข</a>
+                    <a class="btn btn-default" href="../database/edit.php?id=<?php echo $row['product_id']; ?>">แก้ไข</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <div class="row center-thing">
             <a id="add" class="btn btn-default" href="../database/new.php">เพิ่มสินค้า</a>
-        </div>  
+        </div>
     </div>
 </body>
 </html>
