@@ -71,3 +71,13 @@ input[name=pass] {
     border: none;
     font-size: 150%;
 }
+
+.middle-thing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.center-thing {
+  text-align: center;
+}
