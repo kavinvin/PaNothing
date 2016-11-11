@@ -8,11 +8,11 @@
                 รายการสินค้า
             </div>
         <?php
-            $sql="SELECT * FROM products ORDER BY id_product ASC";
+            $sql="SELECT * FROM products ORDER BY product_id ASC";
             $query=mysql_query($sql);
 
             while ($row=mysql_fetch_array($query)) {
-              $item_id = "product-id".$row['id_product'];
+              $item_id = "product-id".$row['product_id'];
         ?>
             <div class="col-xs-12 panel-body product-list">
               <div class="col-xs-5 product-pic center-y">

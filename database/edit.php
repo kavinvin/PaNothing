@@ -56,17 +56,17 @@ if (isset($_POST['submit'])) {
         $error = 'กรุณากรอกข้อมูลให้ถูกต้อง';
         formOutput($id, $name, $description, $price, $error);
     } else {
-        mysql_query("UPDATE products SET name='$name', description='$description', price='$price' WHERE id_product='$id'") or die(mysql_error());
+        mysql_query("UPDATE products SET name='$name', description='$description', price='$price' WHERE product_id='$id'") or die(mysql_error());
         header("Location: ../backend/index.php");
         }
-        
+
     } else {
     echo 'เกิดความผิดพลาด กรุณาลองใหม่';
     }
 } else {
     if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
         $id = $_GET['id'];
-        $result = mysql_query("SELECT * FROM products WHERE id_product=$id") or die(mysql_error());
+        $result = mysql_query("SELECT * FROM products WHERE product_id=$id") or die(mysql_error());
         $row = mysql_fetch_array($result);
 
     if($row) {
