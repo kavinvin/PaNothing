@@ -5,19 +5,18 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $myusername = mysql_real_escape_string($_POST['username']);
-      $mypassword = mysql_real_escape_string($_POST['password']); 
+      $username = mysql_real_escape_string($_POST['username']);
+      $password = mysql_real_escape_string($_POST['password']); 
       
-      $sql = "SELECT id FROM account WHERE username='$username' and passcode='$password'";
+      $sql = "SELECT user_id FROM accounts WHERE user_name='$username' and user_password='$password'";
       $result = mysql_query($sql);
       $row = mysql_fetch_array($result);
-      $active = $row['active'];
+      $active = $row['user_id'];
       $count = mysql_num_rows($result);
       
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         session_register("username");
          $_SESSION['login_user'] = $username;
          header("location: index.php");
       }else {
@@ -48,13 +47,14 @@
                <form action = "" method = "post">
                   <label>ชื่อผู้ใช้  :</label><input type = "text" name = "username" class = "form-control"/><br /><br />
                   <label>รหัสผ่าน  :</label><input type = "password" name = "password" class = "form-control" /><br/><br />
-                  <input class="btn btn-default" type = "submit" value = "Submit"/><br />
+                    <input class="btn btn-default col-xs-6" type = "submit" value = "เข้าสู่ระบบ"/>
+                    <a href="register.php" class="btn btn-default col-xs-6">สมัครสมาชิก</a>
                </form>
           </div>
                
             <?php 
                 if(isset($error)) {
-                    echo '<div class="alert alert-warning">'.$error.'</div>';
+                    echo '<div class="alert alert-warning col-xs-12">'.$error.'</div>';
                 }    
             ?>
 				

@@ -1,6 +1,7 @@
 <?php
     session_start();
     require("database/connection.php");
+    include('session.php');
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +38,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav pull-right user">
-        <a href="login.php" class="btn btn-info">เข้าสู่ระบบ</a>
-        <a href="register.php" class="btn btn-info">สมัครสมาชิก</a>
+        <span class="btn btn-primary">สวัสดี <?php echo $_SESSION['login_user']; ?></span>
+        <a href="logout.php" class="btn btn-warning">ออกจากระบบ</a>
         </ul>
     </div>
   </div>
