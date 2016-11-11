@@ -15,35 +15,40 @@
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <link href="backend.css" rel='stylesheet'>
+  <link href="../css/custom.css" rel='stylesheet'>
+  <link href="../css/product.css" rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
+    <div class="container panel">
         <?php
             $result = mysql_query("SELECT * FROM products") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
         ?>
-        <div class="col-xs-12 center-thing">
-            <div class="col-xs-3">
+        <div class="col-xs-12 center-thing panel-body product-list">
+            <div class="col-xs-12 col-sm-2 center-y">
+                <?php echo $row['id_product']; ?>
+            </div>
+            <div class="col-xs-12 col-sm-2 center-y">
                 <?php echo $row['name']; ?>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-12 col-sm-3 center-y">
                 <?php echo $row['description']; ?>
             </div>
-            <div class="col-xs-3">
+            <div class="col-xs-12 col-sm-2 center-y">
                 <?php echo $row['price']; ?>
             </div>
-            <div class="col-xs-3">
-                <div class="row">
-                    <a href="delete.php?id=<?php echo $row['name']; ?>">ลบ</a>
+            <div class="col-xs-12 col-sm-3 center-y">
+                <div class="col-xs-12 col-sm-6">
+                    <a class="btn btn-default" href="../database/delete.php?id=<?php echo $row['id_product']; ?>">ลบ</a>
                 </div>
-                <div class="row">
-                    <a href="edit.php?id=<?php echo $row['name']; ?>">แก้ไข</a>
+                <div class="col-xs-12 col-sm-6">
+                    <a class="btn btn-default" href="../database/edit.php?id=<?php echo $row['id_product']; ?>">แก้ไข</a>
                 </div>
             </div>
         </div>
         <?php } ?>
         <div class="row center-thing">
-            <a href="new.php">เพิ่มสินค้า</a>
+            <a id="add" class="btn btn-default" href="../database/new.php">เพิ่มสินค้า</a>
         </div>  
     </div>
 </body>
