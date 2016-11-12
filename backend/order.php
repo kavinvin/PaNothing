@@ -20,6 +20,8 @@
   <link href="backend.css" rel='stylesheet'>
   <link href="../css/custom.css" rel='stylesheet'>
   <link href="../css/product.css" rel='stylesheet'>
+  <link href="../css/order.css" rel='stylesheet'>
+
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
@@ -28,41 +30,50 @@
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
         ?>
-            <div class="col-xs-12 center-thing panel-body product-list">
-            <div class="col-xs-12 col-sm-2 center-y">
-                <?php echo $row['purchase_id']; ?>
+          <div>
+            <div class="col-xs-12 center-thing panel-body product-list orderlist">
+              <div class="col-xs-12 col-sm-2 center-y">
+                  <?php echo $row['purchase_id']; ?>
+              </div>
+              <div class="col-xs-12 col-sm-2 center-y">
+                  <?php echo $row['user_id']; ?>
+              </div>
+              <div class="col-xs-12 col-sm-2 center-y">
+                  <?php echo $row['total'].' บาท'; ?>
+              </div>
+              <div class="col-xs-12 col-sm-3 center-y">
+                 <?php echo "เสร็จสิ้น" ?>
+              </div>
             </div>
-            <div class="col-xs-12 col-sm-2 center-y">
-                <?php echo $row['user_id']; ?>
+            <div class="col-xs-12 col-sm-3 suborder">
+                  <?php
+                  $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
+                  $arrayme = explode(',',$row[2]); #เอา array เก็บาสินค้าออกมา
+                  foreach($arrayme as $value){
+                      if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
+                          $id = explode('=',$value)[0];
+                          $id = substr($id, 10);
+                          while($data_find = mysql_fetch_array($data)) {
+                              if($data_find['product_id'] == $id) {
+                                  echo '<div class="btn btn-info sublist">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                  break;
+                              }
+                          }
+                      }
+                  }
+                  ?>
+              </div>
             </div>
-            <div class="col-xs-12 col-sm-3 center-y">
-                <?php
-                $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
-                $arrayme = explode(',',$row[2]); #เอา array เก็บาสินค้าออกมา
-                foreach($arrayme as $value){
-                    if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
-                        $id = explode('=',$value)[0];
-                        $id = substr($id, 10);
-                        while($data_find = mysql_fetch_array($data)) {
-                            if($data_find['product_id'] == $id) {
-                                echo '<div class="btn btn-info">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
-                                break;
-                            }
-                        }
-                     }
-                    }
-               ?>
-            </div>
-            <div class="col-xs-12 col-sm-2 center-y">
-                <?php echo $row['total']; ?>
-            </div>
-            <div class="col-xs-12 col-sm-3 center-y">
-               <?php echo "เสร็จสิ้น" ?>
-            </div>
-        </div>
         <?php
-        } 
+        }
         ?>
             </div>
+
+        <script>
+          $('.orderlist').click(function() {
+            $(this).siblings(".suborder").slideToggle();
+          });
+        </script>
+
     </body>
 </html>

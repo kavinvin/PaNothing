@@ -24,7 +24,7 @@ $(document).ready(function() {
       return --oldval;
     });
   });
-  
+
   $('.checkhover').hover(function() {
     $(this).siblings(".sidepic").stop().fadeTo('1000', 0.4);
     $(this).siblings(".sidepic").velocity({left: '0px'}, {queue: false});
@@ -36,6 +36,6 @@ $(document).ready(function() {
     $(this).siblings(".sidepic").velocity({left: '-80px'}, {queue: false});
     $(this).parent().velocity({width: '70px'}, {queue: false});
     $(this).parent().siblings(".product-name").css('color', 'black');
-  }); 
-  
+  });
+
 });

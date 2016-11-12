@@ -1,0 +1,17 @@
+.orderlist {
+    cursor: hand;
+}
+
+.suborder {
+    position: static;
+    display: none;
+}
+
+.sublist {
+    margin-top: 10px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
