@@ -8,6 +8,8 @@
         header("location: ../denied.php");
     }
 ?>
+
+<!DOCTYPE html>
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,12 +23,12 @@
   <link href="../css/custom.css" rel='stylesheet'>
   <link href="../css/product.css" rel='stylesheet'>
   <link href="../css/order.css" rel='stylesheet'>
-
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
-        <div class="container">
+        <div class="container panel">
         <?php
+            include("consolebar.php");
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
         ?>
