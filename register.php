@@ -65,7 +65,7 @@ if ($username == '' || $password == '' || $password_recheck == '' || $user_id ==
     $error = 'กรุณาใส่ข้อมูลให้ถูกต้องและครบทุกช่อง';
     formOutput($error);
     } else {
-        mysql_query("INSERT accounts SET user_name='$username', user_password='$password', user_id='$user_id', user_email='$user_email'") or die(mysql_error());
+        mysql_query("INSERT accounts SET user_name='$username', user_password='$password', user_id='$user_id', user_email='$user_email', isadmin = '0'") or die(mysql_error());
         header("Location: login.php");
         }
 } else {

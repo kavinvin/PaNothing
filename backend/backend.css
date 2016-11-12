@@ -16,3 +16,11 @@
 #add {
     margin-top: 15px;
 }
+
+#admin {
+    background: #adadad;
+}
+
+#admin a {
+    height: 100%;
+}

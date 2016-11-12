@@ -8,7 +8,7 @@
       $user_id = mysql_real_escape_string($_POST['user_id']);
       $password = mysql_real_escape_string($_POST['password']); 
       
-      $sql = "SELECT user_id, user_name FROM accounts WHERE user_id='$user_id' and user_password='$password'";
+      $sql = "SELECT user_id, user_name, isadmin FROM accounts WHERE user_id='$user_id' and user_password='$password'";
       $result = mysql_query($sql);
       $row = mysql_fetch_array($result);
       $active = $row['user_id'];
@@ -17,8 +17,9 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         $_SESSION['login_user'] = $row['user_name'];
-         header("location: index.php");
+          $_SESSION['login_user'] = $row['user_name'];
+          $_SESSION['isadmin'] = $row['isadmin'];
+          header("location: index.php");
       }else {
          $error = "ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด";
       }

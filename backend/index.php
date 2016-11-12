@@ -2,6 +2,11 @@
     session_start();
     require("../database/connection.php");
     $_page="../database/products";
+    include('../session.php');
+
+    if($_SESSION['login_user'] == '' || $_SESSION['isadmin'] == '0') {
+        header("location: ../denied.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +22,16 @@
   <link href="backend.css" rel='stylesheet'>
   <link href="../css/custom.css" rel='stylesheet'>
   <link href="../css/product.css" rel='stylesheet'>
+  <title>หลังบ้านป้า | Panothing</title>
 </head>
 <body>
     <div class="container panel">
+        <div class="col-xs-12 product-list center-thing" id="admin">
+            <h2 class="col-xs-10">สวัสดี <?php echo $_SESSION['login_user']; ?></h2>
+            <div class="center-y pull-right col-xs-2">
+                <a href="../logout.php" class="btn btn-danger">ออกจากระบบ</a>
+            </div>
+        </div>
         <?php
             $result = mysql_query("SELECT * FROM products") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
