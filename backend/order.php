@@ -23,6 +23,7 @@
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
+        <div class="container">
         <?php
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
@@ -35,17 +36,33 @@
                 <?php echo $row['user_id']; ?>
             </div>
             <div class="col-xs-12 col-sm-3 center-y">
-                <?php echo "wtf" ?>
+                <?php
+                $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
+                $arrayme = explode(',',$row[2]); #เอา array เก็บาสินค้าออกมา
+                foreach($arrayme as $value){
+                    if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
+                        $id = explode('=',$value)[0];
+                        $id = substr($id, 10);
+                        while($data_find = mysql_fetch_array($data)) {
+                            if($data_find['product_id'] == $id) {
+                                echo '<div class="btn btn-info">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                break;
+                            }
+                        }
+                     }
+                    }
+               ?>
             </div>
             <div class="col-xs-12 col-sm-2 center-y">
                 <?php echo $row['total']; ?>
             </div>
             <div class="col-xs-12 col-sm-3 center-y">
-               <?php print_r($result); ?>
+               <?php echo "เสร็จสิ้น" ?>
             </div>
         </div>
         <?php
         } 
         ?>
+            </div>
     </body>
 </html>
