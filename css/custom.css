@@ -75,3 +75,15 @@ input[name=pass] {
 .user {
     padding: 8px;
 }
+
+.highest {
+    height: 100%;
+}
+
+#total_bar button {
+    border-radius: 0px 4px 4px 0px;
+}
+
+#total {
+    border-radius: 4px 0px 0px 4px;
+}
