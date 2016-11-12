@@ -7,7 +7,7 @@
             <div class="col-xs-12 panel-heading product-header">
                 รายการสินค้า
             </div>
-            <form id="order" method="post" action="">
+            <form id="order" method="post" action="database/purchase.php">
         <?php
             $sql="SELECT * FROM products ORDER BY product_id ASC";
             $query=mysql_query($sql);
@@ -40,7 +40,7 @@
                 <div class="col-xs-12">
                 <div class="product-list middle-thing" id="total_bar">
                     <div id="total" class="col-xs-10 center-y well"><h4>ยอดรวม 0 บาท</h4></div>
-                    <button class="btn btn-success col-xs-2 center-y highest" type="button" name="checkout">สั่งซื้อ</button>
+                    <button class="btn btn-success col-xs-2 center-y highest" type="submit">สั่งซื้อ</button>
                     </div>
                 </div>
                 </form>
@@ -63,4 +63,23 @@
                 $('#total h4').text("ยอดรวม "+total+" บาท");
             });
         });
+        
+        //ajax order
+        
+        $(document).ready(function(){
+            $("#order").submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                url:'database/purchase.php',
+                type:'post',
+                data:"product_info="+$('#order').serialize().split('&')+"&total="+$('#total').text().split(' ')[1],
+                success:function(){
+                    alert('ส่งไปแล้วววว');
+                },
+                    error: function(){
+                        alert('WTF ไม่ไปปป');
+                    }
+            });
+        });  
+    });
     </script>

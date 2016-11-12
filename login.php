@@ -19,6 +19,7 @@
       if($count == 1) {
           $_SESSION['login_user'] = $row['user_name'];
           $_SESSION['isadmin'] = $row['isadmin'];
+          $_SESSION['user_id'] = $row['user_id'];
           header("location: index.php");
       }else {
          $error = "ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด";
