@@ -52,7 +52,7 @@
             $('.product-price').each(function(){
                 price_list.push(parseFloat($(this).html()));
             });
-            $('.arrow').click(function(){
+            $('.arrow, .quantity-filler').on('click keypress', function(){
                 var total = 0;
                 var output = $('#order').serialize().split('&');
                 var length = output.length;
