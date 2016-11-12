@@ -36,11 +36,21 @@
       </button>
       <a class="navbar-brand" href="#">PaNothing</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav pull-right user">
-        <span class="btn btn-primary">สวัสดี <?php echo $_SESSION['login_user']; ?></span>
-        <a href="logout.php" class="btn btn-warning">ออกจากระบบ</a>
-        </ul>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="nav navbar-nav pull-right user">
+    <?php
+    
+      if($_SESSION['login_user'] == ''){
+          echo '<a href="login.php" class="btn btn-warning">เข้าสู่ระบบ</a>
+                <a href="register.php" class="btn btn-warning">สมัครสมาชิก</a>';
+              
+      } else {
+          echo '<span class="btn btn-primary">สวัสดี '.$_SESSION['login_user'].'</span>
+            <a href="logout.php" class="btn btn-warning">ออกจากระบบ</a>';
+      }
+      
+      ?>
+        </div>
     </div>
   </div>
   </nav>

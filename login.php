@@ -5,19 +5,19 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $username = mysql_real_escape_string($_POST['username']);
+      $user_id = mysql_real_escape_string($_POST['user_id']);
       $password = mysql_real_escape_string($_POST['password']); 
       
-      $sql = "SELECT user_id FROM accounts WHERE user_name='$username' and user_password='$password'";
+      $sql = "SELECT user_id, user_name FROM accounts WHERE user_id='$user_id' and user_password='$password'";
       $result = mysql_query($sql);
       $row = mysql_fetch_array($result);
       $active = $row['user_id'];
       $count = mysql_num_rows($result);
-      
+        
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
       if($count == 1) {
-         $_SESSION['login_user'] = $username;
+         $_SESSION['login_user'] = $row['user_name'];
          header("location: index.php");
       }else {
          $error = "ชื่อผู้ใช้หรือรหัสผ่านผิดพลาด";
@@ -45,7 +45,7 @@
           <h3>เข้าสู่ระบบ</h3>
                <div class="form-group">
                <form action = "" method = "post">
-                  <label>ชื่อผู้ใช้  :</label><input type = "text" name = "username" class = "form-control"/><br /><br />
+                  <label>รหัสนักศึกษา  :</label><input type = "text" name = "user_id" class = "form-control"/><br /><br />
                   <label>รหัสผ่าน  :</label><input type = "password" name = "password" class = "form-control" /><br/><br />
                     <input class="btn btn-default col-xs-6" type = "submit" value = "เข้าสู่ระบบ"/>
                     <a href="register.php" class="btn btn-default col-xs-6">สมัครสมาชิก</a>
