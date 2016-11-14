@@ -26,43 +26,42 @@
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
-
-        <div class="container panel">
+        <div id="data" class="container panel">
         <?php
             $this_page = 'order';
             include("consolebar.php");
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
         ?>
-          <div>
+            <div>
             <div class="col-xs-12 center-thing panel-body product-list orderlist">
-              <div class="col-xs-12 col-sm-2 center-y">
+              <div class="col-xs-3 center-y">
                   <?php echo $row['purchase_id']; ?>
               </div>
-              <div class="col-xs-12 col-sm-2 center-y">
+              <div class="col-xs-3 center-y">
                   <?php echo $row['user_id']; ?>
               </div>
-              <div class="col-xs-12 col-sm-2 center-y">
+              <div class="col-xs-3 center-y">
                   <?php echo $row['total'].' บาท'; ?>
               </div>
-              <div class="col-xs-12 col-sm-3 center-y">
-                 <?php echo "เสร็จสิ้น" ?>
+              <div class="col-xs-3 center-y">
+                 <form method="post" action=""><button type="submit" value="<?php echo $row['purchase_id'];?>" name="del" class="del btn btn-success">เสร็จสิ้น</button></form>
               </div>
               <div class="col-xs-12 col-sm-3 center-y">
                 <button id="<?php echo $row['purchase_id']; ?>" class="btn btn-default deliver">พร้อมส่ง</button>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-3 suborder">
+            <div class="col-xs-12">
                   <?php
                   $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
-                  $arrayme = explode(',',$row[2]); #เอา array เก็บาสินค้าออกมา
+                  $arrayme = explode(',',$row[2]); #เอา array เก็บสินค้าออกมา
                   foreach($arrayme as $value){
                       if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
                           $id = explode('=',$value)[0];
                           $id = substr($id, 10);
                           while($data_find = mysql_fetch_array($data)) {
                               if($data_find['product_id'] == $id) {
-                                  echo '<div class="btn btn-info sublist">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                  echo '<div class="btn btn-info sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
                                   break;
                               }
                           }
@@ -70,36 +69,31 @@
                   }
                   ?>
               </div>
-            </div>
+        </div>
         <?php
         }
         ?>
             </div>
 
         <script>
-
-          $('.orderlist').click(function() {
-                $(this).siblings(".suborder").slideToggle();
-              });
-          $(document).ready(function(){
-            $(".deliver").click(function(e) {
-              e.preventDefault();
-              alert('sfsdlkjf');
-              $.ajax({
-                url: 'deliver.php',
-                type: 'post',
-                data: "purchase_id="+e.target.id,
-                success:function(){
-                  alert("purchase_id="+e.target.id);
-                },
-                error: function(){
-                  alert('WTF ไม่ไปปป');
+            function refresh_div() {
+                jQuery.ajax({
+                    url:'order.php',
+                    type:'POST',
+                    success:function(results) {
+                        jQuery("#data").html(results);
+                        }
+                    });
                 }
-              });
-            });
-          });
-
+                t = setInterval(refresh_div,1000);
         </script>
+
+        <?php
+            if(isset($_POST['del'])){
+                $purchase_id = mysql_real_escape_string(htmlspecialchars($_POST['del']));
+                $del = mysql_query("DELETE FROM purchases WHERE purchase_id='$purchase_id'") or die(mysql_error());
+            }
+        ?>
 
     </body>
 </html>

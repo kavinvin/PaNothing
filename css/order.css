@@ -1,15 +1,13 @@
 .orderlist {
-    cursor: hand;
+    cursor: auto;
 }
 
 .suborder {
     position: static;
-    display: none;
 }
 
 .sublist {
-    margin-top: 10px;
-    width: 100%;
+    margin: 5px;
 }
 
 ::-webkit-scrollbar {
