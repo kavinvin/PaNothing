@@ -85,8 +85,6 @@
                     $("#data").load(location.href + " #data");
                     }
                 t = setInterval(refresh_div,1000);
-            
-           
         </script>
 
         <?php
