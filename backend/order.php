@@ -26,8 +26,10 @@
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
+
         <div class="container panel">
         <?php
+            $this_page = 'order';
             include("consolebar.php");
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
@@ -45,6 +47,9 @@
               </div>
               <div class="col-xs-12 col-sm-3 center-y">
                  <?php echo "เสร็จสิ้น" ?>
+              </div>
+              <div class="col-xs-12 col-sm-3 center-y">
+                <button id="<?php echo $row['purchase_id']; ?>" class="btn btn-default deliver">พร้อมส่ง</button>
               </div>
             </div>
             <div class="col-xs-12 col-sm-3 suborder">
@@ -72,9 +77,28 @@
             </div>
 
         <script>
+
           $('.orderlist').click(function() {
-            $(this).siblings(".suborder").slideToggle();
+                $(this).siblings(".suborder").slideToggle();
+              });
+          $(document).ready(function(){
+            $(".deliver").click(function(e) {
+              e.preventDefault();
+              alert('sfsdlkjf');
+              $.ajax({
+                url: 'deliver.php',
+                type: 'post',
+                data: "purchase_id="+e.target.id,
+                success:function(){
+                  alert("purchase_id="+e.target.id);
+                },
+                error: function(){
+                  alert('WTF ไม่ไปปป');
+                }
+              });
+            });
           });
+
         </script>
 
     </body>

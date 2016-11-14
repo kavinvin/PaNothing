@@ -28,6 +28,7 @@
 <body>
     <div class="container panel">
         <?php
+            $this_page = 'product';
             include("consolebar.php");
             $result = mysql_query("SELECT * FROM products") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {

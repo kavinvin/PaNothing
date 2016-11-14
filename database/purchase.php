@@ -1,4 +1,4 @@
-<?php 
+<?php
 include('connection.php');
 require('../session.php');
 session_start();
