@@ -24,3 +24,8 @@
 #admin a {
     height: 100%;
 }
+
+.consolebar {
+    text-align: left;
+    margin-top: 15px;
+}
