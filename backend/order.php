@@ -73,23 +73,19 @@
 
         <script>
             
-            function refresh_div() {
-                jQuery.ajax({
-                    url:'order.php',
-                    type:'POST',
-                    success:function(results) {
-                        jQuery("#data").html(results);
-                        }
-                    });
-                }
-                t = setInterval(refresh_div,1000);
             
-            $(document).ready(function(){
-                $('.product-list').click(function(){
-                    $(this).fadeOut(); 
-                    $(this).next().fadeOut(); 
+             $(document).ready(function(){
+                $('.del').click(function(){
+                    $(this).css({background: 'red'});
                 });
             });
+            
+            function refresh_div() {
+                    $("#data").load(location.href + " #data");
+                    }
+                t = setInterval(refresh_div,1000);
+            
+           
         </script>
         
         <?php
