@@ -17,7 +17,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
   <script src="../bootstrap/js/bootstrap.js"></script>
-  <script src="backend.js"></script>
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <link href="../css/custom.css" rel='stylesheet'>
@@ -59,7 +58,7 @@
                           $id = substr($id, 10);
                           while($data_find = mysql_fetch_array($data)) {
                               if($data_find['product_id'] == $id) {
-                                  echo '<div class="btn btn-default success sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                  echo '<div class="btn btn-default sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
                                   break;
                               }
                           }
