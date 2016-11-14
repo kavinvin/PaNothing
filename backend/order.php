@@ -82,7 +82,7 @@
                         }
                     });
                 }
-                t = setInterval(refresh_div,10000);
+                t = setInterval(refresh_div,1000);
         </script>
         
         <?php
