@@ -19,10 +19,10 @@
   <script src="../bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-  <link href="backend.css" rel='stylesheet'>
   <link href="../css/custom.css" rel='stylesheet'>
   <link href="../css/product.css" rel='stylesheet'>
   <link href="../css/order.css" rel='stylesheet'>
+  <link href="backend.css" rel='stylesheet'>
   <title>รายการสั่ง | Panothing</title>
 </head>
     <body>
