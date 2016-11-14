@@ -34,3 +34,7 @@
     float: right;
     margin-left: 10px;
 }
+
+.success {
+    background-color: green !important;
+}

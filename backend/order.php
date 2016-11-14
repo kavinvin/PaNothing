@@ -17,6 +17,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
   <script src="../bootstrap/js/bootstrap.js"></script>
+  <script src="backend.js"></script>
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
   <link href="../css/custom.css" rel='stylesheet'>
@@ -47,9 +48,6 @@
               <div class="col-xs-3 center-y">
                  <form method="post" action=""><button type="submit" value="<?php echo $row['purchase_id'];?>" name="del" class="del btn btn-success">เสร็จสิ้น</button></form>
               </div>
-              <div class="col-xs-12 col-sm-3 center-y">
-                <button id="<?php echo $row['purchase_id']; ?>" class="btn btn-default deliver">พร้อมส่ง</button>
-              </div>
             </div>
             <div class="col-xs-12">
                   <?php
@@ -61,7 +59,7 @@
                           $id = substr($id, 10);
                           while($data_find = mysql_fetch_array($data)) {
                               if($data_find['product_id'] == $id) {
-                                  echo '<div class="btn btn-info sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                  echo '<div class="btn btn-info success sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
                                   break;
                               }
                           }
