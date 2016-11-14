@@ -57,7 +57,7 @@
                           $id = substr($id, 10);
                           while($data_find = mysql_fetch_array($data)) {
                               if($data_find['product_id'] == $id) {
-                                  echo '<div class="btn btn-info sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                  echo '<div class="btn btn-default sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
                                   break;
                               }
                           }
@@ -83,6 +83,13 @@
                     });
                 }
                 t = setInterval(refresh_div,1000);
+            
+            $(document).ready(function(){
+                $('.product-list').click(function(){
+                    $(this).fadeOut(); 
+                    $(this).next().fadeOut(); 
+                });
+            });
         </script>
         
         <?php
