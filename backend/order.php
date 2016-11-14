@@ -28,6 +28,7 @@
     <body>
         <div id="data" class="container panel">
         <?php
+            $this_page = 'order';
             include("consolebar.php");
             $result = mysql_query("SELECT * FROM purchases") or die(mysql_error());
             while($row = mysql_fetch_array( $result )) {
@@ -72,11 +73,11 @@
             </div>
 
         <script>
-            
-            
+
              $(document).ready(function(){
                 $('.del').click(function(){
                     $(this).css({background: 'red'});
+
                 });
             });
             
@@ -87,7 +88,7 @@
             
            
         </script>
-        
+
         <?php
             if(isset($_POST['del'])){
                 $purchase_id = mysql_real_escape_string(htmlspecialchars($_POST['del']));
