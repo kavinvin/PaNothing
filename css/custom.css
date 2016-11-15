@@ -87,3 +87,8 @@ input[name=pass] {
 #total {
     border-radius: 4px 0px 0px 4px;
 }
+
+.fullheight {
+  height: 100%;
+  min-height: 100%;
+}

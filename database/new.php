@@ -11,13 +11,16 @@ function formOutput($error) {
     <script src="../bootstrap/js/bootstrap.js"></script>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="../css/custom.css"/>
+    <link rel="stylesheet" href="../css/product.css"/>
+    <link rel="stylesheet" href="../backend/backend.css"/>
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <title>เพิ่มสินค้า | PaNothing</title>
 </head>
 
 <body>
 
-    <div class="container middle-thing col-xs-12 col-md-8 well">
+    <div class="fullheight">
+    <div class="container middle-thing well">
 
 <?php
     if ($error != '') {
@@ -67,4 +70,5 @@ if ($name == '' || $description == '' || $price == '') {
 }
 
 ?>
+    </div>
     </div>
