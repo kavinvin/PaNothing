@@ -27,67 +27,66 @@
 <body>
   <!-- nav -->
   <nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">PaNothing</a>
-    </div>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PaNothing</a>
+      </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <div class="nav navbar-nav pull-right user">
-    <?php
-    
-      if($_SESSION['login_user'] == ''){
-          echo '<a href="login.php" class="btn btn-warning">เข้าสู่ระบบ</a>
-                <a href="register.php" class="btn btn-warning">สมัครสมาชิก</a>';
-              
-      } else {
-          echo '<span class="btn btn-primary">สวัสดี '.$_SESSION['login_user'].'</span>
-            <a href="logout.php" class="btn btn-warning">ออกจากระบบ</a>';
-      }
-      
-      ?>
+      <?php
+
+        if($_SESSION['login_user'] == ''){
+            echo '<a href="login.php" class="btn btn-warning">เข้าสู่ระบบ</a>
+                  <a href="register.php" class="btn btn-warning">สมัครสมาชิก</a>';
+
+        } else {
+            echo '<span class="btn btn-primary">สวัสดี '.$_SESSION['login_user'].'</span>
+              <a href="logout.php" class="btn btn-warning">ออกจากระบบ</a>';
+        }
+
+        ?>
         </div>
+      </div>
     </div>
-  </div>
   </nav>
   <!-- nav end -->
   <!-- header -->
-    <div class="container">
+  <div class="container">
     <div class="hidden-xs col-sm-12">
       <div id="header" class="owl-carousel owl-theme">
         <div class="item"><img src="img/headerimg2.jpg"></img></div>
         <div class="item"><img src="img/headerimg3.jpg"></img></div>
-    </div></div>
+      </div>
+    </div>
     <!-- header end -->
     <div class="col-xs-12">
       <div id="detail" class="col-xs-12 col-sm-6 example center"><h3>ทำไมต้อง"ป้าไม่ได้อะไรเลย"?</h3></div>
       <div id="omelet" class="col-xs-12 col-sm-6 example">
         <button data-toggle="modal" data-target="#myModal" class="btn btn-info center col-xs-12">สั่งไข่เจียวเดี๋ยวนี้!</button>
+      </div>
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">สั่งไข่เจียว</h4>
+            </div>
+            <div class="modal-body">
+              <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default">สั่ง!</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+            </div>
+          </div>
         </div>
-        <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">สั่งไข่เจียว</h4>
       </div>
-      <div class="modal-body">
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default">สั่ง!</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-      </div>
-    </div>
-
-  </div>
-</div>
     </div>
       <?php require("database/products.php"); ?>
     </div>
