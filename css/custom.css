@@ -80,12 +80,6 @@ input[name=pass] {
     height: 100%;
 }
 
-#total_bar {
-  box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-}
-
 #total_bar button {
     border-radius: 0px 4px 4px 0px;
 }

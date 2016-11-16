@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="product-list middle-thing" id="total_bar">
-                    <div id="total" class="col-xs-10 center-y well"><h4>ยอดรวม 0 บาท</h4><  /div>
+                    <div id="total" class="col-xs-10 center-y well"><h4>ยอดรวม 0 บาท</h4></div>
                     <button class="btn btn-success col-xs-2 center-y highest" type="submit">สั่งซื้อ</button>
                     </div>
                 </div>

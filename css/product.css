@@ -15,6 +15,11 @@
   cursor: default;
 }
 
+.center-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .product-pic {
   height: 80px;
   padding: 0;
