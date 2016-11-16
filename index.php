@@ -79,14 +79,24 @@
             </div>
             <div class="modal-body">
               <div class="row">
-                <div class="col-xs-4">
-                  <div class="center-x center-text">Pork</div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="center-x center-text">Sausage</div>
-                </div>
-                <div class="col-xs-4">
-                  <div class="center-x center-text">Veggie</div>
+                <div class="col-xs-12">
+                  <form name="omlette">
+                    <div class="col-xs-4 center-text">
+                      <img src="">
+                      <div class="center-x center-text">Pork</div>
+                      <input type="radio" name="pork" />
+                    </div>
+                    <div class="col-xs-4 center-text">
+                      <img src="">
+                      <div class="center-x center-text">Sausage</div>
+                      <input type="radio" name="sausage" />
+                    </div>
+                    <div class="col-xs-4 center-text">
+                      <img src="">
+                      <div class="center-x center-text">Veggie</div>
+                      <input type="radio" name="veggie" />
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

@@ -12,6 +12,7 @@
   -moz-box-shadow: 0px 0px 8px 2px #CCCCCC;
   -webkit-box-shadow: 0px 0px 8px 2px #CCCCCC;
   position: relative;
+  cursor: default;
 }
 
 .product-pic {
@@ -38,6 +39,7 @@
   width: 70px;
   position: absolute;
   z-index: 90;
+  cursor: pointer;
 }
 
 .sidepic {
