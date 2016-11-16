@@ -78,7 +78,17 @@
               <h4 class="modal-title">สั่งไข่เจียว</h4>
             </div>
             <div class="modal-body">
-              <p>Some text in the modal.</p>
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="center-x center-text">Pork</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="center-x center-text">Sausage</div>
+                </div>
+                <div class="col-xs-4">
+                  <div class="center-x center-text">Veggie</div>
+                </div>
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default">สั่ง!</button>
