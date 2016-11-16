@@ -80,21 +80,21 @@
             <div class="modal-body">
               <div class="row">
                 <div class="col-xs-12">
-                  <form name="omlette">
+                  <form id="omelette">
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Pork</div>
-                      <input type="radio" name="pork" />
+                      <input type="radio" name="omelette" value="pork" />
                     </div>
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Sausage</div>
-                      <input type="radio" name="sausage" />
+                      <input type="radio" name="omelette" value="sausage" />
                     </div>
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Veggie</div>
-                      <input type="radio" name="veggie" />
+                      <input type="radio" name="omelette" value="veggie" />
                     </div>
                   </form>
                 </div>

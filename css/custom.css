@@ -114,7 +114,13 @@ input[name=pass] {
   padding: 0 !important;
 }
 
-form[name=omlette] img {
+form[name=omelette] {
+  font-size: 1.2em;
+}
+
+#omelette img {
+  margin: 10px 0;
   height: 160px;
   width: 100%;
 }
+
