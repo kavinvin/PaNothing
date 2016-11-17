@@ -76,32 +76,47 @@
           <form id="omelette" method="post" action="database/purchase.php">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">สั่งไข่เจียว</h4>
+              <h4 class="modal-title">สั่งไข่เจียว 30 บาท</h4>
             </div>
             <div class="modal-body">
               <div class="row">
                 <div class="col-xs-12">
                     <div class="col-xs-4 center-text">
-                      <img src="">
-                      <div class="center-x center-text">Pork</div>
+                      <img src="img/omelette/pork.jpg">
+                      <div class="center-x center-text">หมูสับ</div>
                       <input type="checkbox" name="omelette" value="pork" />
                     </div>
                     <div class="col-xs-4 center-text">
-                      <img src="">
-                      <div class="center-x center-text">Sausage</div>
+                      <img src="img/omelette/sausage.jpg">
+                      <div class="center-x center-text">ไส้กรอก</div>
                       <input type="checkbox" name="omelette" value="sausage" />
                     </div>
                     <div class="col-xs-4 center-text">
-                      <img src="">
-                      <div class="center-x center-text">Veggie</div>
-                      <input type="checkbox" name="omelette" value="veggie" />
+                      <img src="img/omelette/cheese.jpg">
+                      <div class="center-x center-text">ชีส</div>
+                      <input type="checkbox" name="omelette" value="cheese" />
+                    </div>
+                    <div class="col-xs-4 center-text">
+                      <img src="img/omelette/chaom.jpg">
+                      <div class="center-x center-text">ชะอม</div>
+                      <input type="checkbox" name="omelette" value="chaom" />
+                    </div>
+                    <div class="col-xs-4 center-text">
+                      <img src="img/omelette/chili.jpg">
+                      <div class="center-x center-text">พริก</div>
+                      <input type="checkbox" name="omelette" value="chili" />
+                    </div>
+                    <div class="col-xs-4 center-text">
+                      <img src="img/omelette/crabstick.jpg">
+                      <div class="center-x center-text">ปูอัด</div>
+                      <input type="checkbox" name="omelette" value="crabstick" />
                     </div>
                 </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-default">สั่ง!</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+              <button type="submit" class="btn btn-warning">สั่ง!</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
             </div>
             </form>
           </div>
@@ -111,12 +126,11 @@
       $(document).ready(function(){
         $("#omelette").submit(function(e){
             $value = ("&" + $("#omelette").serialize()).replace(/\&omelette=/g, ".");
-            alert($value);
             e.preventDefault();
             $.ajax({
             url:'database/purchase.php',
             type:'post',
-            data:"product_info="+$value+"&total=25",
+            data:"product_info="+$value+"&total=30",
             success:function(){
                 alert('ส่งไปแล้วววว');
             },
