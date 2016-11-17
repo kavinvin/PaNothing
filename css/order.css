@@ -13,3 +13,8 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
+.order_username {
+    text-align: left;
+    padding-left: 30px;
+}

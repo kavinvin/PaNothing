@@ -35,16 +35,23 @@
         ?>
             <div>
             <div class="col-xs-12 center-thing panel-body product-list orderlist">
-              <div class="col-xs-3 center-y">
+              <div class="col-xs-1 center-y">
                   <?php echo $row['purchase_id']; ?>
               </div>
-              <div class="col-xs-3 center-y">
+              <div class="col-xs-2 center-y">
                   <?php echo $row['user_id']; ?>
               </div>
-              <div class="col-xs-3 center-y">
+              <div class="col-xs-5 center-y order_username">
+                  <?php
+                    $query = "SELECT user_name FROM accounts WHERE user_id=59070009";
+                    $account = mysql_query($query) or die(mysql_error());
+                    echo mysql_fetch_array($account)['user_name'];
+                   ?>
+              </div>
+              <div class="col-xs-2 center-y">
                   <?php echo $row['total'].' บาท'; ?>
               </div>
-              <div class="col-xs-3 center-y">
+              <div class="col-xs-2 center-y">
                  <form method="post" action=""><button type="submit" value="<?php echo $row['purchase_id'];?>" name="del" class="del btn btn-success">เสร็จสิ้น</button></form>
               </div>
             </div>
@@ -52,7 +59,7 @@
                   <?php
                     if (substr($row['product_info'], 0, 8) == 'omelette') {
                       $omelette_type = array(
-                        "pork" => "",
+                        "pork" => "หมูสับ",
                         "sausage" => "ไส้กรอก",
                         "veggie" => "มังสวิรัติ"
                       );
