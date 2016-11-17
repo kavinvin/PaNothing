@@ -3,11 +3,11 @@
             echo "<h2>$message</h2>";
         }
     ?>
+        <form id="order" method="post" action="database/purchase.php">
         <div id="goods" class="panel col-xs-12 panel-primary">
             <div class="col-xs-12 panel-heading product-header">
                 รายการสินค้า
             </div>
-            <form id="order" method="post" action="database/purchase.php">
         <?php
             $sql="SELECT * FROM products ORDER BY product_id ASC";
             $query=mysql_query($sql);
@@ -44,9 +44,9 @@
                     <button class="btn btn-success col-xs-2 center-y highest" type="submit">สั่งซื้อ</button>
                     </div>
                 </div>
-                </form>
             </div>
         </div>
+        </form>
 
     <script>
         $(document).ready(function(){
@@ -83,5 +83,6 @@
                     }
             });
         });
+
     });
     </script>
