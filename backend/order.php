@@ -65,7 +65,7 @@
                         "cheese" => "ชีส",
                         "chaom" => "ชะอม",
                         "chili" => "พริก",
-                        "crabstick" => "ปูอัด",
+                        "crabstick" => "ปูอัด"
                       );
                       echo '<div class="btn btn-warning sublist col-xs-3">ไข่เจียว :</div>';
                       foreach ($omelette_list as $value) {

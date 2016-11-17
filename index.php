@@ -65,7 +65,7 @@
     </div>
     <!-- header end -->
     <div class="col-xs-12">
-      <div id="detail" class="col-xs-12 col-sm-6 example center"><h3>ทำไมต้อง"ป้าไม่ได้อะไรเลย"?</h3></div>
+      <div id="detail" class="col-xs-12 col-sm-6 example center"><h3>ของกินธรรมดา ราคาเฉยๆ มาลองกันเลย หายหิวแน่นอน (บทกลอนป้าไม่มีอะไร)</h3></div>
       <div id="omelet" class="col-xs-12 col-sm-6 example">
         <button data-toggle="modal" data-target="#myModal" class="btn btn-info center col-xs-12">สั่งไข่เจียวเดี๋ยวนี้!</button>
       </div>
