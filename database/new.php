@@ -111,7 +111,7 @@ if ($name == '' || $description == '' || $price == '') {
     formOutput($error);
     } else {
         mysql_query("INSERT products SET name='$name', description='$description', price='$price'") or die(mysql_error());
-        header("Location: ../backend/index.php");
+        // header("Location: ../backend/index.php");
         }
 } else {
     formOutput('');

@@ -62,7 +62,10 @@
                       $omelette_type = array(
                         "pork" => "หมูสับ",
                         "sausage" => "ไส้กรอก",
-                        "veggie" => "มังสวิรัติ"
+                        "cheese" => "ชีส",
+                        "chaom" => "ชะอม",
+                        "chili" => "พริก",
+                        "crabstick" => "ปูอัด"
                       );
                       echo '<div class="btn btn-warning sublist col-xs-3">ไข่เจียว :</div>';
                       foreach ($omelette_list as $value) {

@@ -56,6 +56,8 @@ input[name=pass] {
 
 #detail h3 {
     color: white;
+    text-align: center;
+    text-size: 0.8em;
 }
 
 #omelet {
@@ -120,7 +122,6 @@ form[name=omelette] {
 
 #omelette img {
   margin: 10px 0;
-  height: 160px;
   width: 100%;
 }
 
