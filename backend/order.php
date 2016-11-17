@@ -35,13 +35,13 @@
         ?>
             <div>
             <div class="col-xs-12 center-thing panel-body product-list orderlist">
-              <div class="col-xs-1 center-y">
+              <div class="col-xs-2 center-y">
                   <?php echo $row['purchase_id']; ?>
               </div>
               <div class="col-xs-2 center-y">
                   <?php echo $row['user_id']; ?>
               </div>
-              <div class="col-xs-5 center-y order_username">
+              <div class="col-xs-4 center-y order_username">
                   <?php
                     $query = "SELECT user_name FROM accounts WHERE user_id=59070009";
                     $account = mysql_query($query) or die(mysql_error());
@@ -57,7 +57,9 @@
             </div>
             <div class="col-xs-12">
                   <?php
-                    if (substr($row['product_info'], 0, 8) == 'omelette') {
+                    if (substr($row['product_info'], 0, 1) == '&') {
+                      $row['product_info'].explode();
+                      echo $row['product_info'];
                       $omelette_type = array(
                         "pork" => "หมูสับ",
                         "sausage" => "ไส้กรอก",

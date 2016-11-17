@@ -84,17 +84,17 @@
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Pork</div>
-                      <input type="radio" name="omelette" value="pork" />
+                      <input type="checkbox" name="omelette" value="pork" />
                     </div>
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Sausage</div>
-                      <input type="radio" name="omelette" value="sausage" />
+                      <input type="checkbox" name="omelette" value="sausage" />
                     </div>
                     <div class="col-xs-4 center-text">
                       <img src="">
                       <div class="center-x center-text">Veggie</div>
-                      <input type="radio" name="omelette" value="veggie" />
+                      <input type="checkbox" name="omelette" value="veggie" />
                     </div>
                 </div>
               </div>
@@ -110,7 +110,8 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $("#omelette").submit(function(e){
-            $value = "omelette="+$('input[name=omelette]:checked').val();
+            $value = "&"+$("#omelette").serialize();
+            alert($value);
             e.preventDefault();
             $.ajax({
             url:'database/purchase.php',
