@@ -50,20 +50,30 @@
             </div>
             <div class="col-xs-12">
                   <?php
-                  $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
-                  $arrayme = explode(',',$row[2]); #เอา array เก็บสินค้าออกมา
-                  foreach($arrayme as $value){
-                      if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
-                          $id = explode('=',$value)[0];
-                          $id = substr($id, 10);
-                          while($data_find = mysql_fetch_array($data)) {
-                              if($data_find['product_id'] == $id) {
-                                  echo '<div class="btn btn-default sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
-                                  break;
+                    if (substr($row['product_info'], 0, 8) == 'omelette') {
+                      $omelette_type = array(
+                        "pork" => "",
+                        "sausage" => "ไส้กรอก",
+                        "veggie" => "มังสวิรัติ"
+                      );
+                      echo '<div class="btn btn-default sublist col-xs-3">ไข่เจียว '.$omelette_type[substr($row['product_info'], 9)].'</div>';
+                    }
+                    else {
+                      $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());
+                      $arrayme = explode(',',$row[2]); #เอา array เก็บสินค้าออกมา
+                      foreach($arrayme as $value){
+                          if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
+                              $id = explode('=',$value)[0];
+                              $id = substr($id, 10);
+                              while($data_find = mysql_fetch_array($data)) {
+                                  if($data_find['product_id'] == $id) {
+                                      echo '<div class="btn btn-default sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
+                                      break;
+                                  }
                               }
                           }
                       }
-                  }
+                    }
                   ?>
               </div>
         </div>
