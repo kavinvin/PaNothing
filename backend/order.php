@@ -15,7 +15,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+  <script src="order.js"></script>
   <script src="../bootstrap/js/bootstrap.js"></script>
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.css"/>
   <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -77,12 +77,12 @@
                 $('.del').click(function(){
                     $(this).parent().fadeOut();
                     $(this).next().fadeOut();
-                    
+
                 });
             function refresh_div() {
                     $("#data").load(location.href + " #data");
                     }
-                t = setInterval(refresh_div,10000);
+            t = setInterval(refresh_div,10000);
         </script>
 
         <?php
