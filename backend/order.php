@@ -57,15 +57,18 @@
             </div>
             <div class="col-xs-12">
                   <?php
-                    if (substr($row['product_info'], 0, 1) == '&') {
-                      $row['product_info'].explode();
-                      echo $row['product_info'];
+                    if (substr($row['product_info'], 0, 1) == '.') {
+                      $omelette_list = array_slice(explode('.', $row['product_info']), 1);
                       $omelette_type = array(
                         "pork" => "หมูสับ",
                         "sausage" => "ไส้กรอก",
                         "veggie" => "มังสวิรัติ"
                       );
-                      echo '<div class="btn btn-default sublist col-xs-3">ไข่เจียว '.$omelette_type[substr($row['product_info'], 9)].'</div>';
+                      echo '<div class="btn btn-warning sublist col-xs-3">ไข่เจียว :</div>';
+                      foreach ($omelette_list as $value) {
+                        echo '<div class="btn btn-default sublist col-xs-3">'.$omelette_type[$value].'</div>';
+                      }
+
                     }
                     else {
                       $data = mysql_query("SELECT product_id, name FROM products") or die(mysql_error());

@@ -110,7 +110,7 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $("#omelette").submit(function(e){
-            $value = "&"+$("#omelette").serialize();
+            $value = ("&" + $("#omelette").serialize()).replace(/\&omelette=/g, ".");
             alert($value);
             e.preventDefault();
             $.ajax({
