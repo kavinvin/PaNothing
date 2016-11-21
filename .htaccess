@@ -1,13 +1,9 @@
 DirectoryIndex index.php index.html index.htm
 
-<VirtualHost *:80>
-    ServerName kavinvin.me
-    Redirect / https://kavinvin.me/
-</VirtualHost>
-
-<VirtualHost *:443>
-    ServerName kavinvin.me
-</VirtualHost>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?/$1 [L]
 
 Options -Indexes
 Options +FollowSymlinks
