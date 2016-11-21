@@ -1,8 +1,13 @@
 DirectoryIndex index.php index.html index.htm
 
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<VirtualHost *:80>
+    ServerName kavinvin.me
+    Redirect / https://kavinvin.me/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName kavinvin.me
+</VirtualHost>
 
 Options -Indexes
 Options +FollowSymlinks
