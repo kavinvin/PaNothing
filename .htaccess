@@ -1,1 +1,13 @@
 DirectoryIndex index.php index.html index.htm
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+Options -Indexes
+Options +FollowSymlinks
+
+<Files .htaccess>
+  deny from all
+</Files>
