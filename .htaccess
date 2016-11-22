@@ -1,9 +1,5 @@
 DirectoryIndex index.php index.html index.htm
 
-RewriteEngine On
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https
-RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=302,L]
-
 Options -Indexes
 Options +FollowSymlinks
 
