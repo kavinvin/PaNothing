@@ -1,9 +1,14 @@
 DirectoryIndex index.php index.html index.htm
 
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php?/$1 [L]
+<VirtualHost *:80>
+    ServerName kavinvin.me
+    Redirect permanent / https://kavinvin.me/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName kavinvin.me
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</VirtualHost>
 
 Options -Indexes
 Options +FollowSymlinks
