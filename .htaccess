@@ -1,9 +1,12 @@
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=302,L]
+
 DirectoryIndex index.php index.html index.htm
 
 <VirtualHost *:443>
     # Guarantee HTTPS for 1 Year including Sub Domains
     ServerName kavinvin.com
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
 </VirtualHost>
 
 <VirtualHost *:80>
