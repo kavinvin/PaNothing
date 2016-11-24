@@ -1,7 +1,7 @@
 DirectoryIndex index.php index.html index.htm
 
 <IfModule mod_headers.c>
-Header set Strict-Transport-Security "max-age=10886400; includeSubDomains; preload"
+Header set Strict-Transport-Security "max-age=10886400; includeSubDomains"
 </IfModule>
 
 RewriteEngine On
