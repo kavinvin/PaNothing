@@ -1,5 +1,13 @@
 DirectoryIndex index.php index.html index.htm
 
+<IfModule mod_headers.c>
+Header set Strict-Transport-Security "max-age=10886400; includeSubDomains"
+</IfModule>
+
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule .* https://%{HTTP:Host}%{REQUEST_URI} [L,R=permanent]
+
 Options -Indexes
 Options +FollowSymlinks
 
