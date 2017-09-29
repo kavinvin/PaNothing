@@ -30,8 +30,8 @@
         <?php
             $this_page = 'product';
             include("consolebar.php");
-            $result = mysql_query("SELECT * FROM products") or die(mysql_error());
-            while($row = mysql_fetch_array( $result )) {
+            $result = mysqli_query($conn, "SELECT * FROM products") or die(mysqli_error());
+            while($row = mysqli_fetch_array( $result )) {
         ?>
         <div class="col-xs-12 center-thing panel-body product-list">
             <div class="col-xs-12 col-sm-2 center-y">

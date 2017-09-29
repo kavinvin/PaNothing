@@ -10,9 +10,9 @@
             </div>
         <?php
             $sql="SELECT * FROM products ORDER BY product_id ASC";
-            $query=mysql_query($sql);
+            $query=mysqli_query($conn, $sql);
 
-            while ($row=mysql_fetch_array($query)) {
+            while ($row=mysqli_fetch_array($query)) {
               $item_id = "product-id".$row['product_id'];
         ?>
             <div class="col-xs-12 panel-body product-list">

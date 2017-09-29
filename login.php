@@ -5,14 +5,14 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
       
-      $user_id = mysql_real_escape_string($_POST['user_id']);
-      $password = mysql_real_escape_string($_POST['password']); 
+      $user_id = mysqli_real_escape_string($conn, $_POST['user_id']);
+      $password = mysqli_real_escape_string($conn, $_POST['password']); 
       
       $sql = "SELECT user_id, user_name, isadmin FROM accounts WHERE user_id='$user_id' and user_password='$password'";
-      $result = mysql_query($sql);
-      $row = mysql_fetch_array($result);
+      $result = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_array($result);
       $active = $row['user_id'];
-      $count = mysql_num_rows($result);
+      $count = mysqli_num_rows($result);
         
       // If result matched $myusername and $mypassword, table row must be 1 row
 		
