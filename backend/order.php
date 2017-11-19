@@ -30,7 +30,7 @@
         <?php
             $this_page = 'order';
             include("consolebar.php");
-            $result = mysqli_query($conn, "SELECT * FROM purchases") or die(mysql_error());
+            $result = mysqli_query($conn, "SELECT * FROM purchases") or die(mysqli_error($conn));
             while($row = mysqli_fetch_array( $result )) {
         ?>
             <div>
@@ -44,7 +44,7 @@
               <div class="col-xs-4 center-y order_username">
                   <?php
                     $query = "SELECT user_name FROM accounts WHERE user_id=59070009";
-                    $account = mysqli_query($conn, $query) or die(mysql_error());
+                    $account = mysqli_query($conn, $query) or die(mysqli_error($conn));
                     echo mysqli_fetch_array($account)['user_name'];
                    ?>
               </div>
@@ -74,14 +74,14 @@
 
                     }
                     else {
-                      $data = mysqli_query($conn, "SELECT product_id, name FROM products") or die(mysql_error());
+                      $data = mysqli_query($conn, "SELECT id_product, name FROM products") or die(mysqli_error($conn));
                       $arrayme = explode(',',$row[2]); #เอา array เก็บสินค้าออกมา
                       foreach($arrayme as $value){
                           if(explode('=',$value)[1] != 0) {   #ตัวไหนค่า 0 ก็ไม่สนใจ
                               $id = explode('=',$value)[0];
                               $id = substr($id, 10);
                               while($data_find = mysqli_fetch_array($data)) {
-                                  if($data_find['product_id'] == $id) {
+                                  if($data_find['id_product'] == $id) {
                                       echo '<div class="btn btn-default sublist col-xs-3">'.$data_find['name']." : ".explode('=',$value)[1].'</div>';
                                       break;
                                   }

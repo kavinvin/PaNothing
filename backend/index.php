@@ -30,12 +30,12 @@
         <?php
             $this_page = 'product';
             include("consolebar.php");
-            $result = mysqli_query($conn, "SELECT * FROM products") or die(mysqli_error());
+            $result = mysqli_query($conn, "SELECT * FROM products") or die(mysqli_error($conn));
             while($row = mysqli_fetch_array( $result )) {
         ?>
         <div class="col-xs-12 center-thing panel-body product-list">
             <div class="col-xs-12 col-sm-2 center-y">
-                <?php echo $row['product_id']; ?>
+                <?php echo $row['id_product']; ?>
             </div>
             <div class="col-xs-12 col-sm-2 center-y">
                 <?php echo $row['name']; ?>
@@ -48,10 +48,10 @@
             </div>
             <div class="col-xs-12 col-sm-3 center-y">
                 <div class="col-xs-12 col-sm-6">
-                    <a class="btn btn-default" href="../database/delete.php?id=<?php echo $row['product_id']; ?>">ลบ</a>
+                    <a class="btn btn-default" href="../database/delete.php?id=<?php echo $row['id_product']; ?>">ลบ</a>
                 </div>
                 <div class="col-xs-12 col-sm-6">
-                    <a class="btn btn-default" href="../database/edit.php?id=<?php echo $row['product_id']; ?>">แก้ไข</a>
+                    <a class="btn btn-default" href="../database/edit.php?id=<?php echo $row['id_product']; ?>">แก้ไข</a>
                 </div>
             </div>
         </div>
