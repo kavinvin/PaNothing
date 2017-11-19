@@ -49,15 +49,15 @@ include('connection.php');
 if (isset($_POST['submit'])) {
     if (is_numeric($_POST['id'])) {
         $id = $_POST['id'];
-        $name = mysql_real_escape_string(htmlspecialchars($_POST['name']));
-        $description = mysql_real_escape_string(htmlspecialchars($_POST['description']));
-        $price = mysql_real_escape_string(htmlspecialchars($_POST['price']));
+        $name = mysqli_real_escape_string($conn, htmlspecialchars($_POST['name']));
+        $description = mysqli_real_escape_string($conn, htmlspecialchars($_POST['description']));
+        $price = mysqli_real_escape_string($conn, htmlspecialchars($_POST['price']));
 
     if ($name == '' || $description == '' || $price == '') {
         $error = 'กรุณากรอกข้อมูลให้ถูกต้อง';
         formOutput($id, $name, $description, $price, $error);
     } else {
-        mysql_query("UPDATE products SET name='$name', description='$description', price='$price' WHERE product_id='$id'") or die(mysql_error());
+        mysqli_query($conn,"UPDATE products SET name='$name', description='$description', price='$price' WHERE product_id='$id'") or die(mysql_error());
         header("Location: ../backend/index.php");
         }
 
@@ -67,8 +67,8 @@ if (isset($_POST['submit'])) {
 } else {
     if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
         $id = $_GET['id'];
-        $result = mysql_query("SELECT * FROM products WHERE product_id=$id") or die(mysql_error());
-        $row = mysql_fetch_array($result);
+        $result = mysqli_query($conn,"SELECT * FROM products WHERE product_id=$id") or die(mysql_error());
+        $row = mysqli_fetch_array($result);
 
     if($row) {
         $name = $row['name'];

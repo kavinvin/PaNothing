@@ -54,18 +54,18 @@ function formOutput($error) {
 include('database/connection.php');
 
 if (isset($_POST['submit'])) {
-    $username = mysql_real_escape_string(htmlspecialchars($_POST['username']));
-    $password = mysql_real_escape_string(htmlspecialchars($_POST['password']));
-    $password_recheck = mysql_real_escape_string(htmlspecialchars($_POST['password_recheck']));
-    $user_id = mysql_real_escape_string(htmlspecialchars($_POST['user_id']));
-    $user_email = mysql_real_escape_string(htmlspecialchars($_POST['email']));
-
+    $username = mysqli_real_escape_string($conn, htmlspecialchars($_POST['username']));
+    $password = mysqli_real_escape_string($conn, htmlspecialchars($_POST['password']));
+    $password_recheck = mysqli_real_escape_string($conn, htmlspecialchars($_POST['password_recheck']));
+    $user_id = mysqli_real_escape_string($conn, htmlspecialchars($_POST['user_id']));
+    $user_email = mysqli_real_escape_string($conn, htmlspecialchars($_POST['email']));
 
 if ($username == '' || $password == '' || $password_recheck == '' || $user_id == '' || $user_email == '' || $password_recheck != $password) {
     $error = 'กรุณาใส่ข้อมูลให้ถูกต้องและครบทุกช่อง';
     formOutput($error);
     } else {
-        mysqli_query($conn, "INSERT accounts SET user_name='$username', user_password='$password', user_id='$user_id', user_email='$user_email', isadmin = '0'") or die(mysql_error());
+        $password = hash('sha1', $password);
+        mysqli_query($conn, "INSERT accounts SET user_name='$username', user_password='$password', user_id='$user_id', user_email='$user_email', isadmin = '0'") or die(mysqli_error($conn));
         header("Location: login.php");
         }
 } else {

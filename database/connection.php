@@ -2,7 +2,7 @@
 
    $server="localhost";
    $user="root";
-   $pass="";
+   $pass="1234";
    $db="pa-shop";
 
    // connect to mysql and select db

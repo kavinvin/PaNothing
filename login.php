@@ -6,8 +6,8 @@
       // username and password sent from form 
       
       $user_id = mysqli_real_escape_string($conn, $_POST['user_id']);
-      $password = mysqli_real_escape_string($conn, $_POST['password']); 
-      
+      $password = hash('sha1', mysqli_real_escape_string($conn, $_POST['password']));
+
       $sql = "SELECT user_id, user_name, isadmin FROM accounts WHERE user_id='$user_id' and user_password='$password'";
       $result = mysqli_query($conn, $sql);
       $row = mysqli_fetch_array($result);

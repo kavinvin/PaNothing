@@ -112,8 +112,8 @@
 
         <?php
             if(isset($_POST['del'])){
-                $purchase_id = mysql_real_escape_string(htmlspecialchars($_POST['del']));
-                $del = mysql_query("DELETE FROM purchases WHERE purchase_id='$purchase_id'") or die(mysql_error());
+                $purchase_id = mysqli_real_escape_string($conn, htmlspecialchars($_POST['del']));
+                $del = mysqli_query($conn, "DELETE FROM purchases WHERE purchase_id='$purchase_id'") or die(mysqli_error($conn));
             }
         ?>
 
